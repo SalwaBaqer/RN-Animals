@@ -2,30 +2,13 @@ import React from "react";
 import { StyleSheet, Text, ImageBackground } from "react-native";
 import { VStack } from "native-base";
 
-const Home = ({ navigation }) => {
+const Home = () => {
   return (
-    <ImageBackground
-      source={{
-        uri:
-          "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202103/Ndutuo__Tabora__Tanzania_0_1200x768.jpeg?o4k08TSTDZ_l_LJ8YHKYweZcPHKZQe.R&size=770:433",
-      }}
-      style={styles.container}
-    >
-      <VStack style={styles.cover}>
-        <Text style={styles.title}>Kuwait Safari</Text>
-        <Text style={styles.subTitle}>Wild life matters</Text>
-        <Text
-          style={styles.button}
-          onPress={() =>
-            navigation.navigate("Animals", {
-              animal: { name: "Shark", animal_type: "fish" },
-            })
-          }
-        >
-          Press Me
-        </Text>
-      </VStack>
-    </ImageBackground>
+    <VStack>
+      <Text>Kuwait Safari</Text>
+      <Text>Wild life matters</Text>
+      <Text>Press Me</Text>
+    </VStack>
   );
 };
 

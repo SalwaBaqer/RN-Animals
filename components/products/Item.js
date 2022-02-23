@@ -1,15 +1,14 @@
 import { StyleSheet, Text, Image } from "react-native";
 
-import { HStack, VStack } from "native-base";
+import { HStack } from "native-base";
 
 export default function ProductItem({ animal }) {
   return (
     <HStack style={styles.container} space="3">
-      <Image style={styles.image} source={{ uri: animal.image_link }} />
-      <VStack>
-        <Text style={styles.name}>{animal.name}</Text>
-        <Text style={styles.name}>{animal.animal_type}</Text>
-      </VStack>
+      <Image source={{ uri: animal.image_link }} />
+
+      <Text>{animal.name}</Text>
+      <Text>{animal.animal_type}</Text>
     </HStack>
   );
 }
@@ -17,16 +16,12 @@ export default function ProductItem({ animal }) {
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    padding: 5,
-    borderBottomColor: "#ddff",
-    borderBottomWidth: 2,
   },
   image: {
     width: 80,
     height: 80,
   },
   name: {
-    width: 200,
-    left: 10,
+    color: "red",
   },
 });

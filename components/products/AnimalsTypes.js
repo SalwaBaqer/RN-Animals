@@ -1,20 +1,13 @@
 import animalStore from "../../stores/animalStore";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-const AnimalsTypes = ({ setType }) => {
-  return (
-    <View style={styles.row}>
-      {animalStore.animalsTypes.map((value) => (
-        <TouchableOpacity
-          key={value}
-          style={styles.button}
-          onPress={() => setType(value)}
-        >
-          <Text style={styles.buttonLabel}>{value}</Text>
-        </TouchableOpacity>
-      ))}
-    </View>
-  );
+const AnimalsTypes = () => {
+  const animalTypes = animalStore.animalsTypes.map((value) => (
+    <TouchableOpacity key={value} style={styles.button}>
+      <Text style={styles.buttonLabel}>{value}</Text>
+    </TouchableOpacity>
+  ));
+  return <View style={styles.row}>{animalTypes}</View>;
 };
 
 export default AnimalsTypes;
